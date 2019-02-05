@@ -1,6 +1,5 @@
-# api_py
+# check_weather_api
 
-api をいじってみたいです。  
 天気予報が調べられます。
 
 ## study する目的
@@ -20,8 +19,8 @@ api をいじってみたいです。
 
 ## api
 
-[OpenWetherMap](https://openweathermap.org/)
+[OpenWeatherMap](https://openweathermap.org/)
 
-## Refarences
+## References
 
 [【Python3】WebAPI を叩く【requests】](https://qiita.com/shunyooo/items/b408b8d61f9f73b21da7)
