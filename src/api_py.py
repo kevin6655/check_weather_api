@@ -10,7 +10,7 @@ import json  # json形式で取得するため使う。
 apikey = '取得したapi'
 
 # 調べたい地域を配列に入れる
-areas = ['Tokyo,JP', 'Oranda,US', 'Nara,JP']
+areas = ['調べたい地域名']
 
 # apiの雛形を格納する
 # @argument city:調べたい地域が入る
@@ -29,8 +29,8 @@ for cityname in areas:
     # print(url_request.text)
     # 結果はjson形式で取得になるので、データの変換を行う。json.load(対象のjsonファイル→今回だったら'url_request')
     weather_result = json.loads(url_request.text, encoding="utf-8")
-    # 結果を出力
-    # アクセスの仕方の問題なのか大もとの["city"]や[list]を経由して順番に欲しい値を呼び出さないと値が取得できない。
-    print('地域名は', weather_result["city"]['name'])
-    print('風速は',weather_result["list"][1]['wind']['speed'])
-    print('---')
+
+# json形式でファイル出力
+with open('新しいjsonファイルのパスを指定','w') as result_json:
+    json.dump(weather_result,result_json,indent=2, ensure_ascii=False)
+print('出力完了')
