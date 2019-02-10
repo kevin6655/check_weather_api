@@ -29,8 +29,7 @@ for cityname in areas:
     # print(url_request.text)
     # 結果はjson形式で取得になるので、データの変換を行う。json.load(対象のjsonファイル→今回だったら'url_request')
     weather_result = json.loads(url_request.text, encoding="utf-8")
-
-# json形式でファイル出力
-with open('新しいjsonファイルのパスを指定','w') as result_json:
-    json.dump(weather_result,result_json,indent=2, ensure_ascii=False)
-print('出力完了')
+    # json形式でファイル出力
+    with open(cityname + '_Weather_Result.json', 'w') as result_json:
+        json.dump(weather_result, result_json, indent=2, ensure_ascii=False)
+    print('出力完了')
